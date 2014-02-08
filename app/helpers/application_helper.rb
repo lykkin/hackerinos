@@ -1,7 +1,7 @@
 module ApplicationHelper
     def title(pageTitle)
         if pageTitle.empty?
-            "Hackerinos - Raise your hackers"
+            "Raise your hackerinos"
         else
             pageTitle
         end
