@@ -13,6 +13,10 @@ class HackerinosController < ApplicationController
         end
     end
 
+    def index
+        @hackerinos = Hackerino.all
+    end
+
     private
         def hackerino_params
             params.require(:hackerino).permit(:title, :url, :author)
