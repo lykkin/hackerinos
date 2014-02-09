@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//$('.donger').click(function(e){e.target.parentElement.id})

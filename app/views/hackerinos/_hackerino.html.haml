@@ -1,5 +1,8 @@
-%ul
-    %li
-        =hackerino.author 
-        =hackerino.url 
-        =hackerino.title
+%div{:id => hackerino.id, :class => 'hackerino'}
+    %div{:class => 'donger'}
+        =image_tag 'lowered.png'
+    %a{:href => hackerino.url}
+        =hackerino.title 
+    =hackerino.author
+    %a{:href => '/comments/' << hackerino.id.to_s}
+        Comments
