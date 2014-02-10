@@ -1,0 +1,8 @@
+=if @hackerino.errors.any?
+    %div#errors
+        Fix the following things to posterino your hackerino:
+        %ul
+            -@hackerino.errors.full_messages.each do |msg|
+                %li 
+                    =msg
+
