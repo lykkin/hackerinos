@@ -2,6 +2,7 @@ Hackerinos::Application.routes.draw do
   resources :hackerinos
   resources :comments
 
+  match "/post/", to: "hackerinos#new", via: [:get]
   match "/vote/:id", to: "hackerinos#vote", via: [:post]
   match "/unvote/:id", to: "hackerinos#unvote", via: [:post]
 
