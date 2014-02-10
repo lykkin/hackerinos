@@ -1,6 +1,5 @@
 %div{:id => hackerino.id, :class => 'hackerino'}
-    %div{:class => 'donger'}
-        =image_tag 'lowered.png'
+    =link_to image_tag('lowered.png'), '/vote/' << hackerino.id.to_s, remote:true, method: :post, class: 'donger'
     %a{:href => hackerino.url}
         =hackerino.title 
     =hackerino.author

@@ -1,0 +1,6 @@
+:plain
+    $(document).ready(function(){
+        $("##{@hackerino.id}").children('.donger').replaceWith(
+            '#{link_to image_tag("raised.png"), '/unvote/' << @hackerino.id.to_s, remote: true, method: :post, class:'donger'}'
+        );
+    });

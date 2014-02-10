@@ -3,6 +3,26 @@ class HackerinosController < ApplicationController
         @hackerino = Hackerino.new
     end
 
+    def unvote
+        @hackerino = Hackerino.find(params[:id])
+        @hackerino.vote -= 1
+        respond_to do |f|
+            if @hackerino.save
+                f.js
+            end
+        end
+    end
+
+    def vote
+        @hackerino = Hackerino.find(params[:id])
+        @hackerino.vote += 1
+        respond_to do |f|
+            if @hackerino.save
+                f.js
+            end
+        end
+    end
+
     def create
         @hackerino = Hackerino.new(hackerino_params)
         @hackerino.vote = 0

@@ -1,8 +1,11 @@
 Hackerinos::Application.routes.draw do
-  get "comments/show"
-  get "comments/create"
   resources :hackerinos
   resources :comments
+
+  match "/vote/:id", to: "hackerinos#vote", via: [:post]
+  match "/unvote/:id", to: "hackerinos#unvote", via: [:post]
+
+
   root "hackerinos#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
