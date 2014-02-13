@@ -2,14 +2,6 @@
 =render @hackerino
 %p Raise the noise about this hackerino!
 %div#submitComment
-    =form_for(@new_comment) do |f|
-        =f.hidden_field :hackerino_id, value: @hackerino.id
-
-        =f.label :author
-        =f.text_field :author
-
-        =f.text_area :content
-
-        =f.submit "Let your voice be heard!", class:"button"
+    =render "comments/comment_form"
 -@comments.each do |c|
     =render c

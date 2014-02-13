@@ -1,7 +1,11 @@
 class CommentsController < ApplicationController
   def show
-    @new_comment = Comment.new
-    @new_comment.hackerino_id = params[:id]
+    if not flash[:new_comment]
+        @new_comment = Comment.new
+        @new_comment.hackerino_id = params[:id]
+    else
+        @new_comment = flash[:new_comment]
+    end
     @hackerino = Hackerino.find(params[:id])
     @comments = @hackerino.comments
   end
@@ -11,7 +15,7 @@ class CommentsController < ApplicationController
     if @comment.save
         redirect_to '/comments/' << comment_params[:hackerino_id].to_s
     else
-        render 'hackerinos#index' #get some error stuff here
+        redirect_to '/comments/' << comment_params[:hackerino_id].to_s, :flash => { :new_comment => @comment}
     end
   end
 

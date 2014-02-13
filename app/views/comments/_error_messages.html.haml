@@ -1,0 +1,8 @@
+=if @new_comment.errors.any?
+    %div#errors
+        Fix the following things to talk about this hackerino:
+        %ul
+            -@new_comment.errors.full_messages.each do |msg|
+                %li 
+                    =msg
+

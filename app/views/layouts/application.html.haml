@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 %html
-%head
-    %title
-        =title(yield(:title))
-    =favicon_link_tag "favicon.ico"
-    =stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    =javascript_include_tag "application", "data-turbolinks-track" => true
-    =csrf_meta_tags 
-%body
-    %header
-        =link_to "hackerinos", "/", id:"logo"    
-        =link_to "submit a hackerino", "/post", id:"createPost"
-    %div
-        =yield 
+    %head
+        %title
+            =title(yield(:title))
+        =favicon_link_tag "favicon.ico"
+        =stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+        =javascript_include_tag "application", "data-turbolinks-track" => true
+        =csrf_meta_tags 
+    %body
+        %header
+            =link_to "hackerinos", "/", id:"logo"    
+            =link_to "submit a hackerino", "/post", id:"createPost"
+        %div
+            =yield 

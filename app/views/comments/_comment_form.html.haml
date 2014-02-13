@@ -1,0 +1,10 @@
+=form_for(@new_comment) do |f|
+    =render "comments/error_messages"
+    =f.hidden_field :hackerino_id, value: @hackerino.id
+
+    =f.label :author
+    =f.text_field :author
+
+    =f.text_area :content
+
+    =f.submit "Let your voice be heard!", class:"button"
