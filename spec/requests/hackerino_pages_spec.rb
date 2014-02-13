@@ -6,10 +6,12 @@ describe "Hackerino pages" do
 
     describe "Index page" do
         let(:hackerino) {FactoryGirl.create(:hackerino)}
+        before {hackerino.save}
         before {visit "/"}
         it {should have_title('Raise your hackerinos')}
         it {should have_link('hackerinos', :href => "/")}
         it {should have_link('submit a hackerino', :href => "/post")}
+        it {should have_selector(:css, ".donger")}
 
     end
 
