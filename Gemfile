@@ -3,9 +3,14 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'rb-readline'
 gem 'mysql2'
-gem 'rspec-rails'
-gem 'factory_girl_rails'
 gem 'haml-rails'
+
+group :development, :test do
+    gem 'capybara'
+    gem 'rspec-rails', '2.13.1'
+    gem 'factory_girl_rails'
+end
+
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
